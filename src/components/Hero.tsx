@@ -11,7 +11,7 @@ export default function Hero() {
           alt="Емблема на ПФК Локомотив Пловдив"
           width={220}
           height={220}
-          style={{ display: 'block', margin: '0 auto 28px' }}
+          style={{ display: 'block', margin: '0 auto 28px', filter: 'brightness(1.18)' }}
         />
         <p
           style={{
