@@ -1,5 +1,6 @@
 import SectionHeading from '../components/SectionHeading'
 import Timeline from '../components/Timeline'
+import FanStatements from '../components/FanStatements'
 import MythFact from '../components/MythFact'
 
 export default function Hronologiya() {
@@ -11,6 +12,10 @@ export default function Hronologiya() {
         description="Сезони, класирания, треньори, ключови моменти. Всеки факт — с източник или ясно маркиран като чакащ проверка."
       />
       <Timeline />
+
+      <div style={{ height: 64 }} />
+
+      <FanStatements />
 
       <div style={{ height: 64 }} />
 
