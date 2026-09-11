@@ -58,18 +58,24 @@ npm run preview   # преглед на build-а локално
 грешен или недоказан факт. Затова има вградени маркери (`needsSource`,
 `isPlaceholder`) навсякъде, където съдържанието още не е финално.
 
-## Deploy (Cloudflare Pages + GitHub)
+## Deploy (Cloudflare Workers + GitHub)
+
+Cloudflare вече води новите Git-свързани проекти през "Workers" flow-а
+(`npx wrangler deploy`), не класическия Pages upload на `dist/`.
 
 1. Качете хранилището в GitHub (public или private).
-2. В Cloudflare Pages → "Create a project" → "Connect to Git" → изберете
-   репото.
-3. Build настройки:
-   - Framework preset: **Vite**
+2. В Cloudflare Dashboard → Workers & Pages → Create → Connect to Git →
+   изберете репото.
+3. Build/Deploy настройки (обикновено се разпознават автоматично):
    - Build command: `npm run build`
-   - Build output directory: `dist`
-4. `public/_redirects` вече е сложен с правило за SPA routing
-   (`/* /index.html 200`), за да работят директните линкове към
-   `/hronologiya`, `/v-chisla` и `/investitori`.
+   - Deploy command: `npx wrangler deploy`
+4. [wrangler.jsonc](wrangler.jsonc) в корена на проекта казва на Wrangler
+   да качи `./dist` като статични assets, с
+   `not_found_handling: "single-page-application"` за SPA routing (за да
+   работят директните линкове към `/hronologiya`, `/precedenti` и т.н.).
+   **Важно:** не добавяйте `public/_redirects` успоредно с това — двата
+   механизма за SPA fallback се засичат един друг като безкраен цикъл
+   (`Invalid _redirects configuration... Infinite loop detected`).
 
 Всеки push към главния клон автоматично пуска нов деплой.
 
