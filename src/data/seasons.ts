@@ -12,6 +12,7 @@ export type SeasonStat = {
  * все още в ход към момента на писане (затова изглежда с малко точки).
  */
 export const seasonStats: SeasonStat[] = [
+  { season: '03/04', leaguePosition: 1, points: 75 },
   { season: '04/05', leaguePosition: 3, points: 58 },
   { season: '05/06', leaguePosition: 5, points: 40 },
   { season: '06/07', leaguePosition: 7, points: 43 },
