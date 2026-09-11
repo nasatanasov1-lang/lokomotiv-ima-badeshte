@@ -13,7 +13,7 @@ const content = {
     points: [
       {
         title: 'История',
-        text: 'Клуб с корени от 1936 г., една национална титла (2004) и силна футболна традиция в Пловдив.',
+        text: 'Клуб с корени от 1926 г., една национална титла (2004) и силна футболна традиция в Пловдив.',
       },
       {
         title: 'Публика',
@@ -42,7 +42,7 @@ const content = {
     points: [
       {
         title: 'History',
-        text: 'A club with roots going back to 1936, one national title (2004), and a strong football tradition in Plovdiv.',
+        text: 'A club with roots going back to 1926, one national title (2004), and a strong football tradition in Plovdiv.',
       },
       {
         title: 'Fan base',

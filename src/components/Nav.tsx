@@ -41,9 +41,9 @@ export default function Nav() {
           <img
             src={crest}
             alt="Емблема на ПФК Локомотив Пловдив"
-            width={32}
-            height={32}
-            style={{ borderRadius: 999, flexShrink: 0 }}
+            width={44}
+            height={44}
+            style={{ borderRadius: 999, flexShrink: 0, opacity: 0.85 }}
           />
           <span style={{ fontWeight: 800, color: 'var(--ink)', letterSpacing: '-0.01em' }}>
             Локомотив има бъдеще
