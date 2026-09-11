@@ -5,6 +5,7 @@ import { Menu, X } from 'lucide-react'
 const links = [
   { to: '/', label: 'Начало' },
   { to: '/hronologiya', label: 'Хронология' },
+  { to: '/100-godini', label: '100 години' },
   { to: '/v-chisla', label: 'В числа' },
   { to: '/investitori', label: 'За инвеститори' },
 ]
