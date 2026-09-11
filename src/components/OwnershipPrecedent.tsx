@@ -1,11 +1,11 @@
 import SectionHeading from './SectionHeading'
-import { ownershipHistory, ownershipHistoryIntro, ownershipHistoryCaveat } from '../data/ownershipHistory'
+import { ownershipHistory, ownershipHistoryIntro } from '../data/ownershipHistory'
 
 export default function OwnershipPrecedent() {
   return (
     <div>
       <SectionHeading
-        eyebrow="Прецедент: ние вече го направихме"
+        eyebrow="У нас, не другаде"
         title="2014: Локомотив вече смени собственик"
         description={ownershipHistoryIntro}
       />
@@ -52,12 +52,6 @@ export default function OwnershipPrecedent() {
           ))}
         </div>
       </div>
-      <p
-        className="card"
-        style={{ padding: 16, fontSize: 13.5, color: 'var(--ink-secondary)', lineHeight: 1.6, borderColor: 'var(--accent)' }}
-      >
-        {ownershipHistoryCaveat}
-      </p>
     </div>
   )
 }

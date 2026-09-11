@@ -5,8 +5,8 @@ export default function OtherClubsCompare() {
   return (
     <div>
       <SectionHeading
-        eyebrow="Има живот след собственик"
-        title="Смяната на собственик не е автоматично край"
+        eyebrow="И не само у нас"
+        title="Примери от други клубове"
         description={otherClubsIntro}
       />
       <div

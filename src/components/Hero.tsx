@@ -9,9 +9,9 @@ export default function Hero() {
         <img
           src={crest}
           alt="Емблема на ПФК Локомотив Пловдив"
-          width={104}
-          height={104}
-          style={{ marginBottom: 24, opacity: 0.85 }}
+          width={220}
+          height={220}
+          style={{ display: 'block', margin: '0 auto 28px' }}
         />
         <p
           style={{

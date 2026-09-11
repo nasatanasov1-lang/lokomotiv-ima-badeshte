@@ -8,6 +8,7 @@ const links = [
   { to: '/hronologiya', label: 'Хронология' },
   { to: '/100-godini', label: '100 години' },
   { to: '/v-chisla', label: 'В числа' },
+  { to: '/precedenti', label: 'Вече го направихме' },
   { to: '/investitori', label: 'За инвеститори' },
 ]
 
@@ -43,9 +44,9 @@ export default function Nav() {
             alt="Емблема на ПФК Локомотив Пловдив"
             width={44}
             height={44}
-            style={{ borderRadius: 999, flexShrink: 0, opacity: 0.85 }}
+            style={{ borderRadius: 999, flexShrink: 0 }}
           />
-          <span style={{ fontWeight: 800, color: 'var(--ink)', letterSpacing: '-0.01em' }}>
+          <span style={{ fontWeight: 800, fontSize: 19, color: 'var(--ink)', letterSpacing: '-0.01em' }}>
             Локомотив има бъдеще
           </span>
         </NavLink>

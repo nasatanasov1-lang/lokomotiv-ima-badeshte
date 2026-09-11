@@ -9,7 +9,7 @@
   --ink-secondary: #52514e;
   --ink-muted: #898781;
   --border: #e1e0d9;
-  --accent: #c8302a;      /* Локомотив червено */
+  --accent: #d1281c;      /* Локомотив червено */
   --accent-ink: #ffffff;
   --series-blue: #2a78d6;
   --good: #0ca30c;
@@ -28,8 +28,8 @@
     --ink-secondary: #c3c2b7;
     --ink-muted: #898781;
     --border: #2c2c2a;
-    --accent: #e05a52;
-    --accent-ink: #150403;
+    --accent: #ff3b30;
+    --accent-ink: #1a0503;
     --series-blue: #3987e5;
     --good: #0ca30c;
   }

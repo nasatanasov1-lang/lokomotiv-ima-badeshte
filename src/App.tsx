@@ -4,6 +4,7 @@ import Layout from './components/Layout'
 import Home from './pages/Home'
 import Hronologiya from './pages/Hronologiya'
 import Jubilee100 from './pages/Jubilee100'
+import Precedents from './pages/Precedents'
 import Investitori from './pages/Investitori'
 
 // Ленив import — VChisla тегли recharts, което не е нужно за първото зареждане на сайта.
@@ -24,6 +25,7 @@ function App() {
             </Suspense>
           }
         />
+        <Route path="/precedenti" element={<Precedents />} />
         <Route path="/investitori" element={<Investitori />} />
       </Route>
     </Routes>

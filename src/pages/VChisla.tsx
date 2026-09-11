@@ -1,7 +1,7 @@
+import { Link } from 'react-router-dom'
+import { ArrowRight } from 'lucide-react'
 import SectionHeading from '../components/SectionHeading'
 import StatsCharts from '../components/StatsCharts'
-import OwnershipPrecedent from '../components/OwnershipPrecedent'
-import OtherClubsCompare from '../components/OtherClubsCompare'
 
 export default function VChisla() {
   return (
@@ -9,17 +9,25 @@ export default function VChisla() {
       <SectionHeading
         eyebrow="Локомотив в числа"
         title="Данните говорят по-силно от лозунгите"
-        description="Класиране, точки и още показатели по сезони — на едно място, без интерпретация."
+        description="Класиране и точки по сезони, от шампионската 2004/05 до днес — на едно място, без интерпретация."
       />
       <StatsCharts />
 
-      <div style={{ height: 64 }} />
+      <div style={{ height: 40 }} />
 
-      <OwnershipPrecedent />
-
-      <div style={{ height: 64 }} />
-
-      <OtherClubsCompare />
+      <Link
+        to="/precedenti"
+        style={{
+          display: 'inline-flex',
+          alignItems: 'center',
+          gap: 8,
+          fontWeight: 700,
+          color: 'var(--accent)',
+          textDecoration: 'none',
+        }}
+      >
+        Вижте „Вече го направихме“ — как Локомотив вече смени собственик <ArrowRight size={16} />
+      </Link>
     </div>
   )
 }
