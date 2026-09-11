@@ -10,6 +10,12 @@ export type TimelineEvent = {
   needsSource?: boolean
 }
 
+export type Trophy = {
+  season: string
+  title: string
+  detail: string
+}
+
 /**
  * ВАЖНО ЗА РЕДАКТОРИТЕ НА САЙТА:
  * Всеки запис тук трябва да има проверим източник. Записите с needsSource: true
@@ -19,12 +25,32 @@ export type TimelineEvent = {
  */
 export const timeline: TimelineEvent[] = [
   {
-    date: '25 юли 1936',
-    title: 'Основаване на клуба',
+    date: '25 юли 1926',
+    title: 'Основаване на Пловдивски Спортклуб',
     description:
-      'Днешният Локомотив Пловдив води началото си от създадения тогава Пловдивски Спортклуб.',
-    source: 'Уикипедия — ПФК „Локомотив“ (Пловдив)',
-    sourceUrl: 'https://bg.wikipedia.org/wiki/ПФК_„Локомотив“_(Пловдив)',
+      'Клубна символика и част от историческите източници сочат тази дата като начало на клуба — сливане на „Караджа“ и „Атлетик“. Има и отделна линия през Железничарски спортен клуб (ЖСК), основан през 1936 г. — двете нишки се сливат по-късно в днешния Локомотив. Точната правна приемственост между тях остава тема на дебат сред запалянковците и историците на клуба.',
+    needsSource: true,
+  },
+  {
+    date: '1945',
+    title: 'Клубът приема името Локомотив',
+    description:
+      'След обединения между ЖСК и други пловдивски дружества, спортната структура е преименувана на Локомотив — името, под което играе и днес.',
+    needsSource: true,
+  },
+  {
+    date: '1973',
+    title: 'Вицешампион на България',
+    description: 'Локомотив завършва държавното първенство на второ място.',
+    needsSource: true,
+  },
+  {
+    date: '1 юни 1983',
+    title: 'Купа на Съветската армия',
+    description:
+      'Локомотив печели първия си национален трофей, побеждавайки Чирпан с 3:1 на финал на стадион „Васил Левски“ пред 25 000 зрители. Голмайстори: Сотиров, Христо Бонев, Б. Стайков и Едуард Ерноясян.',
+    source: 'lokomotivpd.com — „На тази дата: Локомотив печели Купата на съветската армия“',
+    sourceUrl: 'https://lokomotivpd.com/na-tazi-data-lokomotiv-pecheli-kupata-na-savetskata-armija/',
   },
   {
     date: '1982',
@@ -35,12 +61,50 @@ export const timeline: TimelineEvent[] = [
     sourceUrl: 'https://bg.wikipedia.org/wiki/ПФК_„Локомотив“_(Пловдив)',
   },
   {
-    date: '2004',
-    title: 'Шампионска титла',
-    description:
-      'Локомотив Пловдив печели своята единствена досега титла на България, ставайки шампион.',
+    date: '2003/04',
+    title: 'Единствената шампионска титла',
+    description: 'Локомотив Пловдив печели своето първо и досега единствено първенство на България.',
     source: 'Уикипедия — PFC Lokomotiv Plovdiv',
     sourceUrl: 'https://en.wikipedia.org/wiki/PFC_Lokomotiv_Plovdiv',
+  },
+  {
+    date: '2004',
+    title: 'Суперкупа на България',
+    description: 'Локомотив побеждава Литекс с 1:0 и печели първата си Суперкупа.',
+    source: 'Topsport.bg',
+    sourceUrl:
+      'https://topsport.bg/bg-football/loko-pd-nadigra-ludogorets-i-zasluzhi-vtora-v-istoriyata-si-superkupa-na-balgariya.html',
+  },
+  {
+    date: '19 май 2019',
+    title: 'Купа на България 2018/19',
+    description:
+      'Локомотив побеждава градския съперник Ботев Пловдив с 1:0 на финала, с гол на Ален Ожболт в 73-тата минута.',
+    source: 'Gol.bg — репортаж от финала',
+    sourceUrl: 'https://www.gol.bg/a/454-machove-na-zhivo/278422-botev-plovdiv-lokomotiv-plovdiv',
+  },
+  {
+    date: '1 юли 2020',
+    title: 'Купа на България 2019/20',
+    description:
+      'Локомотив побеждава ЦСКА (София) след 0:0 в редовното време и дузпи 5:3, като защитава трофея си. Финалът се играе на 1 юли заради пандемията от COVID-19.',
+    source: 'Novinite.bg',
+    sourceUrl: 'https://m.novinite.bg/articles/285058/cska-vze-kupata-na-balgariya-sled-drama-s-duzpi',
+  },
+  {
+    date: '2020',
+    title: 'Втора Суперкупа на България',
+    description:
+      'Локомотив побеждава шампиона Лудогорец с 1:0 (гол на капитана Димитър Илиев в 89-тата минута) и печели Суперкупата 16 години след първата.',
+    source: 'Topsport.bg',
+    sourceUrl:
+      'https://topsport.bg/bg-football/loko-pd-nadigra-ludogorets-i-zasluzhi-vtora-v-istoriyata-si-superkupa-na-balgariya.html',
+  },
+  {
+    date: '2020/21',
+    title: 'Вицешампион на България',
+    description: 'Локомотив завършва първенството на второ място.',
+    needsSource: true,
   },
   {
     date: '2025',
@@ -70,6 +134,16 @@ export const timeline: TimelineEvent[] = [
       'Насрочена е широка открита среща, на която да се обсъдят следващите стъпки на феновете.',
     needsSource: true,
   },
+]
+
+/** Компактен списък с трофеи за бърз преглед — само записи с потвърден източник по-горе. */
+export const trophies: Trophy[] = [
+  { season: '1983', title: 'Купа на Съветската армия', detail: '3:1 срещу Чирпан' },
+  { season: '2003/04', title: 'Шампион на България', detail: 'единствената титла в историята' },
+  { season: '2004', title: 'Суперкупа на България', detail: '1:0 срещу Литекс' },
+  { season: '2018/19', title: 'Купа на България', detail: '1:0 срещу Ботев Пловдив' },
+  { season: '2019/20', title: 'Купа на България', detail: '5:3 на дузпи срещу ЦСКА (София)' },
+  { season: '2020', title: 'Суперкупа на България', detail: '1:0 срещу Лудогорец' },
 ]
 
 export const timelineNote =

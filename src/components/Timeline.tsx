@@ -1,8 +1,27 @@
-import { timeline, timelineNote } from '../data/timeline'
+import { timeline, timelineNote, trophies } from '../data/timeline'
 
 export default function Timeline() {
   return (
     <div>
+      <div
+        style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+          gap: 12,
+          marginBottom: 40,
+        }}
+      >
+        {trophies.map((t) => (
+          <div key={t.season + t.title} className="card" style={{ padding: '14px 16px' }}>
+            <p style={{ fontSize: 12, fontWeight: 700, color: 'var(--accent)', marginBottom: 4 }}>
+              {t.season}
+            </p>
+            <p style={{ fontSize: 14.5, fontWeight: 700, marginBottom: 2 }}>{t.title}</p>
+            <p style={{ fontSize: 13, color: 'var(--ink-muted)' }}>{t.detail}</p>
+          </div>
+        ))}
+      </div>
+
       <div style={{ position: 'relative', paddingLeft: 24 }}>
         <div
           aria-hidden
