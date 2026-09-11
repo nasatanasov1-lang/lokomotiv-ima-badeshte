@@ -6,6 +6,9 @@
 
 > „Локомотив не е един човек. Собственици идват и си отиват. Локомотив остава.“
 
+🔴 На живо: **https://lokomotiv-plovdiv.com** (и https://www.lokomotiv-plovdiv.com)
+Резервен адрес: https://lokomotiv-ima-badeshte.nasatanasov1.workers.dev
+
 ## Стек
 
 React + TypeScript + Vite, Tailwind CSS 4 (Vite плъгин), React Router,
@@ -78,6 +81,19 @@ Cloudflare вече води новите Git-свързани проекти п
    (`Invalid _redirects configuration... Infinite loop detected`).
 
 Всеки push към главния клон автоматично пуска нов деплой.
+
+### Собствен домейн
+
+Домейнът `lokomotiv-plovdiv.com` е купен и вързан през Cloudflare Dashboard →
+Workers & Pages → `lokomotiv-ima-badeshte` → Domains → Add Domain, което
+автоматично създаде wildcard Route (`*.lokomotiv-plovdiv.com/*`) в зоната.
+
+`www.lokomotiv-plovdiv.com` **не** се добавя през същия диалог (той отказва с
+„No zones match“, защото wildcard Route-ът вече покрива всеки subdomain) —
+единственото, което реално липсваше, е самият DNS запис. Оправя се в
+Cloudflare Dashboard → Domains → `lokomotiv-plovdiv.com` → DNS → Records →
+Add record: Type `CNAME`, Name `www`, Target `lokomotiv-plovdiv.com`,
+Proxy status **Proxied**.
 
 ## Емблема на клуба
 
