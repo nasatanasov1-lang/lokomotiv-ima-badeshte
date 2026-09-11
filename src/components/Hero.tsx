@@ -1,10 +1,18 @@
 import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
+import crest from '../assets/lokomotiv-crest.png'
 
 export default function Hero() {
   return (
     <section style={{ paddingBlock: 'clamp(48px, 8vw, 96px)' }}>
       <div className="container" style={{ textAlign: 'center' }}>
+        <img
+          src={crest}
+          alt="Емблема на ПФК Локомотив Пловдив"
+          width={64}
+          height={64}
+          style={{ marginBottom: 20 }}
+        />
         <p
           style={{
             display: 'inline-block',

@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
+import crest from '../assets/lokomotiv-crest.png'
 
 const links = [
   { to: '/', label: 'Начало' },
@@ -37,15 +38,12 @@ export default function Nav() {
           onClick={() => setOpen(false)}
           style={{ display: 'flex', alignItems: 'center', gap: 10, textDecoration: 'none' }}
         >
-          <span
-            aria-hidden
-            style={{
-              width: 12,
-              height: 12,
-              borderRadius: 999,
-              background: 'var(--accent)',
-              flexShrink: 0,
-            }}
+          <img
+            src={crest}
+            alt="Емблема на ПФК Локомотив Пловдив"
+            width={32}
+            height={32}
+            style={{ borderRadius: 999, flexShrink: 0 }}
           />
           <span style={{ fontWeight: 800, color: 'var(--ink)', letterSpacing: '-0.01em' }}>
             Локомотив има бъдеще
