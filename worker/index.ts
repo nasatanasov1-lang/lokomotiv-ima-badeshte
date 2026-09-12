@@ -2,6 +2,7 @@ export interface Env {
   ASSETS: Fetcher
   VOICES_DB: D1Database
   ADMIN_PASSWORD: SecretsStoreSecret
+  VOICES_RATE_LIMITER: RateLimit
 }
 
 type Submission = {
@@ -74,6 +75,11 @@ export default {
 
       // Public: submit a new voice (goes to pending)
       if (pathname === '/api/voices' && request.method === 'POST') {
+        // Максимум 5 подадени отговора на минута от един IP - пази базата от бот-наводнение.
+        const ip = request.headers.get('cf-connecting-ip') ?? 'unknown'
+        const { success } = await env.VOICES_RATE_LIMITER.limit({ key: ip })
+        if (!success) return json({ error: 'rate_limited' }, 429)
+
         const body = await request.json<Record<string, unknown>>().catch(() => null)
         if (!body) return json({ error: 'invalid_json' }, 400)
 

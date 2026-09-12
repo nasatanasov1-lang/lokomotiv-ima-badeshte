@@ -5,7 +5,7 @@ export default function VoiceSubmitForm() {
   const [role, setRole] = useState('')
   const [answer, setAnswer] = useState('')
   const [website, setWebsite] = useState('') // honeypot - остава скрито за хора
-  const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
+  const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error' | 'rate_limited'>('idle')
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
@@ -17,6 +17,10 @@ export default function VoiceSubmitForm() {
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify({ name, role, answer, website }),
       })
+      if (res.status === 429) {
+        setStatus('rate_limited')
+        return
+      }
       if (!res.ok) throw new Error('failed')
       setStatus('sent')
       setName('')
@@ -113,6 +117,11 @@ export default function VoiceSubmitForm() {
         {status === 'error' && (
           <p style={{ fontSize: 13, color: 'var(--accent)' }}>
             Нещо се обърка — опитай отново след малко.
+          </p>
+        )}
+        {status === 'rate_limited' && (
+          <p style={{ fontSize: 13, color: 'var(--accent)' }}>
+            Твърде много опити от този адрес — изчакай малко и опитай пак.
           </p>
         )}
       </div>
