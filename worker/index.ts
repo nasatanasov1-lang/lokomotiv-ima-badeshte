@@ -135,7 +135,7 @@ export default {
         if (pathname === '/api/admin/voices' && request.method === 'GET') {
           const { results } = await env.VOICES_DB.prepare(
             `SELECT * FROM voice_submissions ORDER BY
-               CASE status WHEN 'pending' THEN 0 ELSE 1 END, created_at ASC`,
+               CASE status WHEN 'pending' THEN 0 ELSE 1 END, created_at DESC`,
           ).all<Submission>()
           return json({ voices: results })
         }
