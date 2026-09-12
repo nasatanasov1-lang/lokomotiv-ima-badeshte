@@ -97,7 +97,20 @@ export const mediaStories: MediaStory[] = [
     title: 'Хорео',
     summary:
       'Хореографиите на трибуните са част от визуалната идентичност на локомотивската общност — тук събираме снимки и видеа от различни поводи през годините.',
-    videos: [],
+    videos: [
+      {
+        videoId: 'dpI6RAYVt40',
+        title: 'PlovdivDerbyTV: Хореографията на Лаута в мача със Спартак Търнава',
+        source: 'PlovdivDerby.com',
+        sourceUrl: 'https://www.youtube.com/@PlovdivDerby',
+      },
+      {
+        videoId: 'aeJfkeu16Yk',
+        title: 'Вижте втората хореография на феновете на Локомотив за дербито',
+        source: 'Redaktor Trafficnews',
+        sourceUrl: 'https://www.youtube.com/@redaktortrafficnews2086',
+      },
+    ],
     photos: [],
   },
 ]
