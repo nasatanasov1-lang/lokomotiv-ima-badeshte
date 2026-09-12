@@ -42,8 +42,10 @@ export default function VoiceWall() {
         }}
       >
         {displayed.map((v) => (
-          <blockquote key={v.key} className="card" style={{ padding: 20, margin: 0 }}>
-            <p style={{ fontSize: 15.5, lineHeight: 1.6, marginBottom: 14 }}>&ldquo;{v.answer}&rdquo;</p>
+          <blockquote key={v.key} className="card" style={{ padding: 20, margin: 0, minWidth: 0 }}>
+            <p style={{ fontSize: 15.5, lineHeight: 1.6, marginBottom: 14, overflowWrap: 'anywhere' }}>
+              &ldquo;{v.answer}&rdquo;
+            </p>
             <footer style={{ fontSize: 13.5, color: 'var(--ink-muted)' }}>
               - {v.name}, {v.role}
             </footer>
