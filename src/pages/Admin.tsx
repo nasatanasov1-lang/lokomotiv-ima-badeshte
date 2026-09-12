@@ -153,9 +153,26 @@ export default function Admin() {
               <strong>{v.status === 'approved' ? '✅' : '❌'}</strong> {v.name}: {v.answer.slice(0, 60)}
               {v.answer.length > 60 ? '…' : ''}
             </span>
-            <button onClick={() => confirmDelete(v)} style={{ ...btnStyle('var(--ink-muted)'), padding: '4px 10px' }}>
-              Изтрий
-            </button>
+            <div style={{ display: 'flex', gap: 6, flexShrink: 0 }}>
+              {v.status === 'approved' ? (
+                <button
+                  onClick={() => act(v.id, 'reject')}
+                  style={{ ...btnStyle('var(--ink-muted)'), padding: '4px 10px' }}
+                >
+                  Откажи
+                </button>
+              ) : (
+                <button
+                  onClick={() => act(v.id, 'approve')}
+                  style={{ ...btnStyle('var(--good)'), padding: '4px 10px' }}
+                >
+                  Одобри
+                </button>
+              )}
+              <button onClick={() => confirmDelete(v)} style={{ ...btnStyle('var(--accent)'), padding: '4px 10px' }}>
+                Изтрий
+              </button>
+            </div>
           </div>
         ))}
       </div>
