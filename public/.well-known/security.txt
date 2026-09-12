@@ -1,0 +1,6 @@
+# Ако откриеш уязвимост в този сайт, моля докладвай я отговорно тук,
+# вместо да я публикуваш директно.
+Contact: https://github.com/nasatanasov1-lang/lokomotiv-ima-badeshte/issues
+Expires: 2027-09-13T00:00:00.000Z
+Preferred-Languages: bg, en
+Canonical: https://lokomotiv-plovdiv.com/.well-known/security.txt
