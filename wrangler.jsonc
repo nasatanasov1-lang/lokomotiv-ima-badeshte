@@ -10,9 +10,9 @@
   "d1_databases": [
     {
       "binding": "VOICES_DB",
-      "database_name": "lokomotiv-voices",
-      // TODO: сложи Database ID-то от Cloudflare Dashboard -> D1 -> lokomotiv-voices
-      "database_id": "PASTE_DATABASE_ID_HERE"
+      "database_name": "lokomotiv-plovdiv",
+      // TODO: сложи Database ID-то от Cloudflare Dashboard -> D1 -> lokomotiv-plovdiv
+      "database_id": "4528d038-6a25-43c5-bf81-6fcd3690e001"
     }
   ]
 }
