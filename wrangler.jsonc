@@ -11,8 +11,14 @@
     {
       "binding": "VOICES_DB",
       "database_name": "lokomotiv-plovdiv",
-      // TODO: сложи Database ID-то от Cloudflare Dashboard -> D1 -> lokomotiv-plovdiv
       "database_id": "4528d038-6a25-43c5-bf81-6fcd3690e001"
+    }
+  ],
+  "secrets_store_secrets": [
+    {
+      "binding": "ADMIN_PASSWORD",
+      "store_id": "9821695a4bdd40e0988ea8d39f1728fb",
+      "secret_name": "ADMIN_PASSWORD"
     }
   ]
 }
