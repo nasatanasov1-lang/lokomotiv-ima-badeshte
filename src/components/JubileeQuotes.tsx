@@ -5,7 +5,7 @@ export default function JubileeQuotes() {
     <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
       <div className="card" style={{ padding: 20 }}>
         <p style={{ fontSize: 12, fontWeight: 700, color: 'var(--ink-muted)', marginBottom: 6 }}>
-          {videoMessageSummary.date} — {videoMessageSummary.from}
+          {videoMessageSummary.date} - {videoMessageSummary.from}
         </p>
         <p style={{ fontSize: 14.5, color: 'var(--ink-secondary)', lineHeight: 1.6, marginBottom: 12 }}>
           Пълният текст на видеото не е публично достъпен в писмена форма. Медиите обобщават посланието в
@@ -27,7 +27,7 @@ export default function JubileeQuotes() {
         <blockquote key={q.from} className="card" style={{ padding: 20, margin: 0 }}>
           <p style={{ fontSize: 15, lineHeight: 1.65, marginBottom: 10 }}>“{q.text}”</p>
           <footer style={{ fontSize: 13, color: 'var(--ink-muted)' }}>
-            — {q.from}
+            - {q.from}
             {q.needsSource && (
               <span
                 style={{

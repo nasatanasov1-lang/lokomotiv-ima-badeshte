@@ -33,7 +33,7 @@ export default function QuizWidget() {
       <SectionHeading
         eyebrow="А ти какво избираш?"
         title="7 въпроса за бъдещето на клуба"
-        description="Без имена, без страни — само въпроси за това какъв Локомотив искаш да видиш."
+        description="Без имена, без страни - само въпроси за това какъв Локомотив искаш да видиш."
       />
 
       <div className="card" style={{ padding: 'clamp(20px, 4vw, 36px)', maxWidth: 640 }}>

@@ -45,7 +45,7 @@ export default function OwnershipPrecedent() {
                   ) : (
                     ev.source
                   )}
-                  {ev.needsSource && <span style={{ marginLeft: 8, fontWeight: 700 }}>— чака пълна проверка</span>}
+                  {ev.needsSource && <span style={{ marginLeft: 8, fontWeight: 700 }}>- чака пълна проверка</span>}
                 </p>
               )}
             </div>

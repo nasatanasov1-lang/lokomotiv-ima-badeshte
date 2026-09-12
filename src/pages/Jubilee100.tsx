@@ -7,7 +7,7 @@ import { jubileeIntro } from '../data/jubilee'
 export default function Jubilee100() {
   return (
     <div className="container" style={{ paddingBlock: 56 }}>
-      <SectionHeading eyebrow="1926 — 2026" title="100 години Локомотив Пловдив" description={jubileeIntro} />
+      <SectionHeading eyebrow="1926 - 2026" title="100 години Локомотив Пловдив" description={jubileeIntro} />
 
       <div
         className="jubilee-grid"
@@ -37,7 +37,7 @@ export default function Jubilee100() {
       <SectionHeading
         eyebrow="Официални послания"
         title="Какво казаха за 100-те години"
-        description="Пълният текст на видеообръщението не е публично достъпен в писмена форма — представяме го обобщено, отделно от точните цитати от свързани изявления."
+        description="Пълният текст на видеообръщението не е публично достъпен в писмена форма - представяме го обобщено, отделно от точните цитати от свързани изявления."
       />
       <JubileeQuotes />
 

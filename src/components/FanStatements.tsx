@@ -34,7 +34,7 @@ export default function FanStatements() {
               <a href={s.sourceUrl} target="_blank" rel="noreferrer" style={{ color: 'var(--series-blue)' }}>
                 {s.source}
               </a>
-              {s.needsSource && <span style={{ marginLeft: 8, fontWeight: 700 }}>— чака пълна проверка</span>}
+              {s.needsSource && <span style={{ marginLeft: 8, fontWeight: 700 }}>- чака пълна проверка</span>}
             </p>
           </div>
         ))}

@@ -38,7 +38,7 @@ export default function MediaStorySection({ story }: { story: MediaStory }) {
               />
               <figcaption style={{ padding: 12, fontSize: 13, color: 'var(--ink-secondary)' }}>
                 {p.caption}
-                {p.credit && <span style={{ color: 'var(--ink-muted)' }}> — {p.credit}</span>}
+                {p.credit && <span style={{ color: 'var(--ink-muted)' }}> - {p.credit}</span>}
               </figcaption>
             </figure>
           ))}

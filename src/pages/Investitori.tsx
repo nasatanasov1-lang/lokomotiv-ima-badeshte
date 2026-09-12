@@ -8,7 +8,7 @@ const content = {
     eyebrow: 'За инвеститори',
     title: 'Заинтересовани от бъдещето на Локомотив Пловдив?',
     intro:
-      'Феновете не могат и не искат да продават клуба — той не е тяхна собственост. Но общността може да бъде мост между сериозен интерес и реалността на клуба.',
+      'Феновете не могат и не искат да продават клуба - той не е тяхна собственост. Но общността може да бъде мост между сериозен интерес и реалността на клуба.',
     quote: '„Не търсим купувач за клуба. Говорим с всеки, който се интересува от бъдещето му.“',
     points: [
       {
@@ -37,7 +37,7 @@ const content = {
     eyebrow: 'For investors',
     title: 'Interested in the future of Lokomotiv Plovdiv?',
     intro:
-      'Fans cannot and do not want to sell the club — it is not theirs to sell. But the community can be a bridge between serious interest and the club\'s reality.',
+      'Fans cannot and do not want to sell the club - it is not theirs to sell. But the community can be a bridge between serious interest and the club\'s reality.',
     quote: '"We are not looking for a buyer for the club. We talk to anyone genuinely interested in its future."',
     points: [
       {

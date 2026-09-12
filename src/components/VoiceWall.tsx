@@ -21,7 +21,7 @@ export default function VoiceWall() {
           >
             <p style={{ fontSize: 15.5, lineHeight: 1.6, marginBottom: 14 }}>“{v.answer}”</p>
             <footer style={{ fontSize: 13.5, color: 'var(--ink-muted)' }}>
-              — {v.name}, {v.role}
+              - {v.name}, {v.role}
             </footer>
           </blockquote>
         ))}

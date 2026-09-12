@@ -8,7 +8,7 @@ import Precedents from './pages/Precedents'
 import Investitori from './pages/Investitori'
 import Media from './pages/Media'
 
-// Ленив import — VChisla тегли recharts, което не е нужно за първото зареждане на сайта.
+// Ленив import - VChisla тегли recharts, което не е нужно за първото зареждане на сайта.
 const VChisla = lazy(() => import('./pages/VChisla'))
 
 function App() {

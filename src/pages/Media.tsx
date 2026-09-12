@@ -13,7 +13,7 @@ export default function Media() {
       <SectionHeading
         eyebrow="Медия"
         title="Локомотив в снимки и видео"
-        description="Визуалният разказ, история по история — от юбилея до трибуните."
+        description="Визуалният разказ, история по история - от юбилея до трибуните."
       />
 
       {mediaStories.length > 1 && (
