@@ -153,10 +153,10 @@ export default function Admin() {
             {pending.length === 0 && <p style={{ color: 'var(--ink-muted)', fontSize: 14 }}>Няма чакащи.</p>}
             {pendingPageItems.map((v) => (
               <div key={v.id} className="card" style={{ padding: 16 }}>
-                <p style={{ fontSize: 13, color: 'var(--ink-muted)', marginBottom: 6 }}>
+                <p style={{ fontSize: 13, color: 'var(--ink-muted)', marginBottom: 6, overflowWrap: 'anywhere' }}>
                   {v.name} - {v.role} - {v.created_at}
                 </p>
-                <p style={{ marginBottom: 12 }}>{v.answer}</p>
+                <p style={{ marginBottom: 12, overflowWrap: 'anywhere' }}>{v.answer}</p>
                 <div style={{ display: 'flex', gap: 8 }}>
                   <button onClick={() => act(v.id, 'approve')} style={btnStyle('var(--good)')}>
                     Одобри
@@ -191,7 +191,7 @@ export default function Admin() {
                   color: '#e8e8e6',
                 }}
               >
-                <span>
+                <span style={{ overflowWrap: 'anywhere', minWidth: 0 }}>
                   <strong>{v.status === 'approved' ? '✅' : '❌'}</strong> {v.name}: {v.answer.slice(0, 60)}
                   {v.answer.length > 60 ? '…' : ''}
                 </span>
