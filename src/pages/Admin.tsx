@@ -53,6 +53,16 @@ export default function Admin() {
     load(key)
   }
 
+  function confirmDelete(v: Submission) {
+    const message =
+      v.status === 'approved'
+        ? `„${v.name}“ вече е одобрен и се показва на сайта. Изтриването ще го премахне и от там незабавно. Продължавам ли?`
+        : `Сигурен ли си, че искаш да изтриеш отговора на „${v.name}“?`
+    if (window.confirm(message)) {
+      act(v.id, 'delete')
+    }
+  }
+
   if (checking) {
     return <div className="container" style={{ paddingBlock: 80 }} />
   }
@@ -146,7 +156,7 @@ export default function Admin() {
               <strong>{v.status === 'approved' ? '✅' : '❌'}</strong> {v.name}: {v.answer.slice(0, 60)}
               {v.answer.length > 60 ? '…' : ''}
             </span>
-            <button onClick={() => act(v.id, 'delete')} style={{ ...btnStyle('var(--ink-muted)'), padding: '4px 10px' }}>
+            <button onClick={() => confirmDelete(v)} style={{ ...btnStyle('var(--ink-muted)'), padding: '4px 10px' }}>
               Изтрий
             </button>
           </div>
