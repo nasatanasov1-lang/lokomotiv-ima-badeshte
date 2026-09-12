@@ -25,7 +25,9 @@ export type MediaStory = {
 
 /**
  * ДОБАВЯНЕ НА НОВА ИСТОРИЯ:
- * копирай обект по образец, дай уникален slug.
+ * копирай обект по образец, дай уникален slug, добави го В КРАЯ на масива —
+ * първата история (final-2019) е водеща/по подразбиране в /media и трябва
+ * да остане на позиция 0, освен ако изрично не се поиска друго.
  *
  * ДОБАВЯНЕ НА ВИДЕО В ИСТОРИЯ:
  * { videoId: 'dQw4w9WgXcQ', title: 'Заглавие', source: '...', sourceUrl: '...' }
@@ -45,43 +47,43 @@ export const mediaStories: MediaStory[] = [
     date: '15 май 2019',
     title: 'Финалът срещу Ботев — първата купа на Локомотив',
     summary:
-      'На финала за Купата на България на Националния стадион „Васил Левски“, пред над 16 000 продадени билета, Локомотив побеждава градския съперник Ботев Пловдив с 1:0. Ален Ожболт вкарва с пета в 73-тата минута — гол, остал в историята на клуба. За Локомотив това е първата спечелена Купа на България в неговата история, докато Ботев е играл финал за четвърти път. По повод дербито на един стадион, футболистите на двата пловдивски отбора излизат със специални съвместни фланелки в знак на градско единство.',
+      'На финала за Купата на България на Националния стадион „Васил Левски“, пред над 16 000 зрители, Локомотив побеждава градския съперник Ботев Пловдив с 1:0. Ален Ожболт вкарва с пета в 73-тата минута — гол, останал в историята на клуба. За Локомотив това е първата спечелена Купа на България в историята на клуба, докато Ботев играе финал за четвърти път. По повод пловдивското дерби на националния стадион футболистите на двата отбора излизат със специални съвместни фланелки в знак на градско единство.',
     videos: [
       {
         videoId: 'fwQaxyyGoT8',
         title: 'Купа България финал: Ботев – Локомотив Пловдив 0:1, гол Ожболт',
-        source: 'YouTube',
-        sourceUrl: 'https://www.youtube.com/watch?v=fwQaxyyGoT8',
+        source: 'LOKOMANIA_1926_PLOVDIV',
+        sourceUrl: 'https://www.youtube.com/@Plovdiv_1926',
       },
       {
         videoId: '67OXEd-yPaQ',
         title: 'Уникалната радост на феновете при гола на Ожболт',
-        source: 'YouTube',
-        sourceUrl: 'https://www.youtube.com/watch?v=67OXEd-yPaQ',
+        source: 'LOKOMANIA_1926_PLOVDIV',
+        sourceUrl: 'https://www.youtube.com/@Plovdiv_1926',
       },
       {
         videoId: 'GsgcHXYYOxg',
         title: 'Пътят на Локомотив до най-ценната купа в историята на пловдивския футбол',
-        source: 'YouTube',
-        sourceUrl: 'https://www.youtube.com/watch?v=GsgcHXYYOxg',
+        source: 'LOKOMANIA_1926_PLOVDIV',
+        sourceUrl: 'https://www.youtube.com/@Plovdiv_1926',
       },
       {
         videoId: 'cuWplNgypeI',
         title: '15.05 — Купата е наша за вечността',
-        source: 'YouTube',
-        sourceUrl: 'https://www.youtube.com/watch?v=cuWplNgypeI',
+        source: 'LOKOMANIA_1926_PLOVDIV',
+        sourceUrl: 'https://www.youtube.com/@Plovdiv_1926',
       },
       {
         videoId: 'hw8vWUqvyfE',
         title: 'Пловдив ликува — купата е черно-бяла',
-        source: 'YouTube',
-        sourceUrl: 'https://www.youtube.com/watch?v=hw8vWUqvyfE',
+        source: 'LOKOMANIA_1926_PLOVDIV',
+        sourceUrl: 'https://www.youtube.com/@Plovdiv_1926',
       },
       {
         videoId: '9Z2LsmtAXmM',
         title: 'Анте я подаде, Ожболт я вкара, купата е наша и жълта тишина…',
-        source: 'YouTube',
-        sourceUrl: 'https://www.youtube.com/watch?v=9Z2LsmtAXmM',
+        source: 'LOKOMANIA_1926_PLOVDIV',
+        sourceUrl: 'https://www.youtube.com/@Plovdiv_1926',
       },
     ],
     photos: [],

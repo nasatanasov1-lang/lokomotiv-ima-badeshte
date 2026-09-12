@@ -29,6 +29,7 @@ function App() {
         <Route path="/precedenti" element={<Precedents />} />
         <Route path="/investitori" element={<Investitori />} />
         <Route path="/media" element={<Media />} />
+        <Route path="/media/:slug" element={<Media />} />
       </Route>
     </Routes>
   )
