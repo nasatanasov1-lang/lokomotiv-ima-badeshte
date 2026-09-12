@@ -6,6 +6,7 @@ import Hronologiya from './pages/Hronologiya'
 import Jubilee100 from './pages/Jubilee100'
 import Precedents from './pages/Precedents'
 import Investitori from './pages/Investitori'
+import Media from './pages/Media'
 
 // Ленив import — VChisla тегли recharts, което не е нужно за първото зареждане на сайта.
 const VChisla = lazy(() => import('./pages/VChisla'))
@@ -27,6 +28,7 @@ function App() {
         />
         <Route path="/precedenti" element={<Precedents />} />
         <Route path="/investitori" element={<Investitori />} />
+        <Route path="/media" element={<Media />} />
       </Route>
     </Routes>
   )
