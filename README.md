@@ -95,6 +95,24 @@ Cloudflare Dashboard → Domains → `lokomotiv-plovdiv.com` → DNS → Records
 Add record: Type `CNAME`, Name `www`, Target `lokomotiv-plovdiv.com`,
 Proxy status **Proxied**.
 
+## "Гласът на Локомотив" - истински, модерирани отговори
+
+От тук нататък `VoiceWall` на началната страница чете одобрени отговори
+на живо от [worker/index.ts](worker/index.ts) (Cloudflare Worker + D1 база
+данни), вместо статичните примери в `src/data/voices.ts` (те остават само
+като fallback, докато няма нито едно одобрено).
+
+- Публично: `GET /api/voices` (одобрени), `POST /api/voices` (нов отговор -
+  влиза със статус `pending`, никога не се показва автоматично).
+- Модерация: `/admin` (не е в навигацията) - заключена зад парола, сравнена
+  със secret-а `ADMIN_PASSWORD` в Cloudflare (Workers & Pages -> проектът ->
+  Settings -> Variables and Secrets). Одобрение/отказ/изтриване на всеки
+  отговор оттам.
+- Схемата (`voice_submissions`) се създава автоматично при първата заявка
+  (`CREATE TABLE IF NOT EXISTS`) - не е нужна отделна миграция.
+- `database_id` в [wrangler.jsonc](wrangler.jsonc) сочи към D1 база, наречена
+  `lokomotiv-voices` (Cloudflare Dashboard -> D1 SQL Database -> Create).
+
 ## Емблема на клуба
 
 [src/assets/lokomotiv-crest.png](src/assets/lokomotiv-crest.png) е свалена директно от официалния сайт

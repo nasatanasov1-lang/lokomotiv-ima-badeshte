@@ -1,8 +1,18 @@
 {
   "name": "lokomotiv-ima-badeshte",
   "compatibility_date": "2026-09-12",
+  "main": "worker/index.ts",
   "assets": {
     "directory": "./dist",
+    "binding": "ASSETS",
     "not_found_handling": "single-page-application"
-  }
+  },
+  "d1_databases": [
+    {
+      "binding": "VOICES_DB",
+      "database_name": "lokomotiv-voices",
+      // TODO: сложи Database ID-то от Cloudflare Dashboard -> D1 -> lokomotiv-voices
+      "database_id": "PASTE_DATABASE_ID_HERE"
+    }
+  ]
 }

@@ -10,6 +10,8 @@ import Media from './pages/Media'
 
 // Ленив import - VChisla тегли recharts, което не е нужно за първото зареждане на сайта.
 const VChisla = lazy(() => import('./pages/VChisla'))
+// Ленив и извън основния layout - вътрешен инструмент, не публична страница.
+const Admin = lazy(() => import('./pages/Admin'))
 
 function App() {
   return (
@@ -31,6 +33,14 @@ function App() {
         <Route path="/media" element={<Media />} />
         <Route path="/media/:slug" element={<Media />} />
       </Route>
+      <Route
+        path="/admin"
+        element={
+          <Suspense fallback={null}>
+            <Admin />
+          </Suspense>
+        }
+      />
     </Routes>
   )
 }
