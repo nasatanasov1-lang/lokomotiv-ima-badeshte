@@ -27,11 +27,20 @@ async function ensureSchema(db: D1Database) {
         role TEXT NOT NULL,
         answer TEXT NOT NULL,
         status TEXT NOT NULL DEFAULT 'pending',
-        created_at TEXT NOT NULL DEFAULT (datetime('now'))
+        created_at TEXT NOT NULL DEFAULT (datetime('now')),
+        ip TEXT
       )`,
     )
     .run()
+  // Миграция за таблица, създадена преди добавянето на колоната ip.
+  try {
+    await db.prepare(`ALTER TABLE voice_submissions ADD COLUMN ip TEXT`).run()
+  } catch {
+    // вече съществува - няма проблем
+  }
 }
+
+const DAILY_LIMIT_PER_IP = 3
 
 function json(data: unknown, status = 200): Response {
   return new Response(JSON.stringify(data), {
@@ -97,10 +106,21 @@ export default {
           return json({ error: 'missing_fields' }, 400)
         }
 
-        await env.VOICES_DB.prepare(
-          `INSERT INTO voice_submissions (name, role, answer, status) VALUES (?, ?, ?, 'pending')`,
+        // Надежден дневен таван на IP, пазен директно в D1 (за разлика от
+        // приблизителния Cloudflare rate limiter по-горе).
+        const { results: countRows } = await env.VOICES_DB.prepare(
+          `SELECT COUNT(*) as count FROM voice_submissions WHERE ip = ? AND created_at >= datetime('now', '-1 day')`,
         )
-          .bind(name, role, answer)
+          .bind(ip)
+          .all<{ count: number }>()
+        if ((countRows[0]?.count ?? 0) >= DAILY_LIMIT_PER_IP) {
+          return json({ error: 'daily_limit' }, 429)
+        }
+
+        await env.VOICES_DB.prepare(
+          `INSERT INTO voice_submissions (name, role, answer, status, ip) VALUES (?, ?, ?, 'pending', ?)`,
+        )
+          .bind(name, role, answer, ip)
           .run()
 
         return json({ ok: true })
