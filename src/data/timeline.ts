@@ -77,7 +77,7 @@ export const timeline: TimelineEvent[] = [
       'https://topsport.bg/bg-football/loko-pd-nadigra-ludogorets-i-zasluzhi-vtora-v-istoriyata-si-superkupa-na-balgariya.html',
   },
   {
-    date: '19 май 2019',
+    date: '15 май 2019',
     title: 'Купа на България 2018/19',
     description:
       'Локомотив побеждава градския съперник Ботев Пловдив с 1:0 на финала, с гол на Ален Ожболт в 73-тата минута.',
