@@ -32,6 +32,7 @@ export default function Nav() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
+          gap: 24,
           height: 64,
         }}
       >
@@ -124,7 +125,7 @@ export default function Nav() {
       )}
 
       <style>{`
-        @media (max-width: 720px) {
+        @media (max-width: 900px) {
           .desktop-nav { display: none !important; }
           .mobile-nav-toggle { display: flex !important; }
         }
