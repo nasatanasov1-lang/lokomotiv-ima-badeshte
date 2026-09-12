@@ -5,8 +5,8 @@ export default function OwnerStatements() {
   return (
     <div>
       <SectionHeading
-        eyebrow="Не се гордеем с това"
-        title="Изказвания, от които се срамуваме"
+        eyebrow="Причината да стигнем до тук"
+        title="Изказвания, които говорят сами за себе си"
         description={ownerStatementsIntro}
       />
       <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
