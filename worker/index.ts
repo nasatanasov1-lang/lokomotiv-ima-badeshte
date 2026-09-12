@@ -1,7 +1,7 @@
 export interface Env {
   ASSETS: Fetcher
   VOICES_DB: D1Database
-  ADMIN_PASSWORD: string
+  ADMIN_PASSWORD: SecretsStoreSecret
 }
 
 type Submission = {
@@ -39,7 +39,7 @@ function json(data: unknown, status = 200): Response {
   })
 }
 
-function isAdmin(request: Request, env: Env): boolean {
+async function isAdmin(request: Request, env: Env): Promise<boolean> {
   const raw = request.headers.get('x-admin-key')
   if (!raw || !env.ADMIN_PASSWORD) return false
   let key: string
@@ -48,7 +48,8 @@ function isAdmin(request: Request, env: Env): boolean {
   } catch {
     key = raw
   }
-  return key === env.ADMIN_PASSWORD
+  const expected = await env.ADMIN_PASSWORD.get()
+  return key === expected
 }
 
 export default {
@@ -101,7 +102,7 @@ export default {
 
       // Everything below is admin-only
       if (pathname.startsWith('/api/admin/')) {
-        if (!isAdmin(request, env)) {
+        if (!(await isAdmin(request, env))) {
           return json({ error: 'unauthorized' }, 401)
         }
 
