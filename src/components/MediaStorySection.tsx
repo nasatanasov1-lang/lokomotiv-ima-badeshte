@@ -4,7 +4,9 @@ import type { MediaStory } from '../data/media'
 export default function MediaStorySection({ story }: { story: MediaStory }) {
   return (
     <section style={{ marginBottom: 8 }}>
-      <p style={{ fontSize: 13, fontWeight: 700, color: 'var(--accent)', marginBottom: 6 }}>{story.date}</p>
+      {story.date && (
+        <p style={{ fontSize: 13, fontWeight: 700, color: 'var(--accent)', marginBottom: 6 }}>{story.date}</p>
+      )}
       <h2 style={{ fontSize: 'clamp(20px, 3vw, 26px)', marginBottom: 12 }}>{story.title}</h2>
       <p style={{ color: 'var(--ink-secondary)', fontSize: 15, lineHeight: 1.65, maxWidth: 720, marginBottom: 24 }}>
         {story.summary}
@@ -41,6 +43,12 @@ export default function MediaStorySection({ story }: { story: MediaStory }) {
             </figure>
           ))}
         </div>
+      )}
+
+      {story.videos.length === 0 && story.photos.length === 0 && (
+        <p className="card" style={{ padding: 20, color: 'var(--ink-muted)', fontSize: 14 }}>
+          Все още няма добавени снимки или видеа тук.
+        </p>
       )}
     </section>
   )

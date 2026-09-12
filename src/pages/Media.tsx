@@ -44,7 +44,7 @@ export default function Media() {
                   border: isActive ? 'none' : '1px solid var(--border)',
                 }}
               >
-                {s.date}
+                {s.navLabel ?? s.date}
               </Link>
             )
           })}

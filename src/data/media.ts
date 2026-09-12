@@ -16,7 +16,10 @@ export type PhotoItem = {
 
 export type MediaStory = {
   slug: string
-  date: string
+  /** За конкретно събитие, напр. "15 май 2019". Празно за постоянни колекции (напр. "Хорео"). */
+  date?: string
+  /** Текст за таба в подменюто — по подразбиране е `date`, ако не е зададен изрично. */
+  navLabel?: string
   title: string
   summary: string
   videos: VideoItem[]
@@ -86,6 +89,15 @@ export const mediaStories: MediaStory[] = [
         sourceUrl: 'https://www.youtube.com/@Plovdiv_1926',
       },
     ],
+    photos: [],
+  },
+  {
+    slug: 'horeo',
+    navLabel: 'Хорео',
+    title: 'Хорео',
+    summary:
+      'Хореографиите на трибуните са част от визуалната идентичност на локомотивската общност — тук събираме снимки и видеа от различни поводи през годините.',
+    videos: [],
     photos: [],
   },
 ]
