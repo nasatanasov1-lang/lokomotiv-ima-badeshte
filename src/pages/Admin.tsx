@@ -12,6 +12,8 @@ type Submission = {
 export default function Admin() {
   const [key, setKey] = useState(() => sessionStorage.getItem('admin_key') ?? '')
   const [unlocked, setUnlocked] = useState(false)
+  // Ако вече има запазена сесия, изчакваме проверката ѝ, вместо да мигне логин формата.
+  const [checking, setChecking] = useState(() => !!sessionStorage.getItem('admin_key'))
   const [voices, setVoices] = useState<Submission[] | null>(null)
   const [error, setError] = useState('')
 
@@ -39,7 +41,7 @@ export default function Admin() {
   }
 
   useEffect(() => {
-    if (key) load(key)
+    if (key) load(key).finally(() => setChecking(false))
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
@@ -49,6 +51,10 @@ export default function Admin() {
       headers: { 'x-admin-key': encodeURIComponent(key) },
     })
     load(key)
+  }
+
+  if (checking) {
+    return <div className="container" style={{ paddingBlock: 80 }} />
   }
 
   if (!unlocked) {
