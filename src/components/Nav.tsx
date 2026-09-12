@@ -32,8 +32,10 @@ export default function Nav() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          gap: 24,
-          height: 64,
+          flexWrap: 'wrap',
+          gap: 12,
+          paddingBlock: 12,
+          minHeight: 64,
         }}
       >
         <NavLink
@@ -57,12 +59,12 @@ export default function Nav() {
               whiteSpace: 'nowrap',
             }}
           >
-            Локомотив има бъдеще
+            Локомотив Пловдив
           </span>
         </NavLink>
 
         <nav
-          style={{ display: 'flex', gap: 4 }}
+          style={{ display: 'flex', flexWrap: 'wrap', gap: 4 }}
           className="desktop-nav"
         >
           {links.map((l) => (
@@ -76,6 +78,8 @@ export default function Nav() {
                 fontSize: 14,
                 fontWeight: 600,
                 textDecoration: 'none',
+                whiteSpace: 'nowrap',
+                flexShrink: 0,
                 color: isActive ? 'var(--accent-ink)' : 'var(--ink-secondary)',
                 background: isActive ? 'var(--accent)' : 'transparent',
               })}
@@ -133,7 +137,7 @@ export default function Nav() {
       )}
 
       <style>{`
-        @media (max-width: 1180px) {
+        @media (max-width: 1320px) {
           .desktop-nav { display: none !important; }
           .mobile-nav-toggle { display: flex !important; }
         }
