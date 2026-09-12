@@ -136,9 +136,6 @@ export default function Admin() {
               <button onClick={() => act(v.id, 'reject')} style={btnStyle('var(--ink-muted)')}>
                 Откажи
               </button>
-              <button onClick={() => act(v.id, 'delete')} style={btnStyle('var(--accent)')}>
-                Изтрий
-              </button>
             </div>
           </div>
         ))}
