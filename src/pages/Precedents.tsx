@@ -7,7 +7,7 @@ export default function Precedents() {
     <div className="container" style={{ paddingBlock: 56 }}>
       <SectionHeading
         eyebrow="Има живот след собственик"
-        title="Вече го направихме"
+        title="Правили сме го"
         description="Смяната на собственик не е хипотеза за Локомотив — вече се е случвала. А и не само тук: и други клубове са минавали през същото."
       />
       <OwnershipPrecedent />

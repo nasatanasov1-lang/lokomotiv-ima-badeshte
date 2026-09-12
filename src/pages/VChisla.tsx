@@ -7,7 +7,7 @@ export default function VChisla() {
   return (
     <div className="container" style={{ paddingBlock: 56 }}>
       <SectionHeading
-        eyebrow="Локомотив в числа"
+        eyebrow="Статистика"
         title="Данните говорят по-силно от лозунгите"
         description="Класиране и точки по сезони, от шампионската 2004/05 до днес — на едно място, без интерпретация."
       />

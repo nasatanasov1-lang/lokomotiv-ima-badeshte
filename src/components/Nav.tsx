@@ -7,8 +7,8 @@ const links = [
   { to: '/', label: 'Начало' },
   { to: '/hronologiya', label: 'Хронология' },
   { to: '/100-godini', label: '100 години' },
-  { to: '/v-chisla', label: 'В числа' },
-  { to: '/precedenti', label: 'Вече го направихме' },
+  { to: '/v-chisla', label: 'Статистика' },
+  { to: '/precedenti', label: 'Правили сме го' },
   { to: '/media', label: 'Медия' },
   { to: '/investitori', label: 'За инвеститори' },
 ]
@@ -39,7 +39,7 @@ export default function Nav() {
         <NavLink
           to="/"
           onClick={() => setOpen(false)}
-          style={{ display: 'flex', alignItems: 'center', gap: 10, textDecoration: 'none' }}
+          style={{ display: 'flex', alignItems: 'center', gap: 10, textDecoration: 'none', flexShrink: 0 }}
         >
           <img
             src={crest}
@@ -48,7 +48,15 @@ export default function Nav() {
             height={44}
             style={{ borderRadius: 999, flexShrink: 0, filter: 'brightness(1.18)' }}
           />
-          <span style={{ fontWeight: 800, fontSize: 19, color: 'var(--ink)', letterSpacing: '-0.01em' }}>
+          <span
+            style={{
+              fontWeight: 800,
+              fontSize: 19,
+              color: 'var(--ink)',
+              letterSpacing: '-0.01em',
+              whiteSpace: 'nowrap',
+            }}
+          >
             Локомотив има бъдеще
           </span>
         </NavLink>
@@ -125,7 +133,7 @@ export default function Nav() {
       )}
 
       <style>{`
-        @media (max-width: 900px) {
+        @media (max-width: 1180px) {
           .desktop-nav { display: none !important; }
           .mobile-nav-toggle { display: flex !important; }
         }
