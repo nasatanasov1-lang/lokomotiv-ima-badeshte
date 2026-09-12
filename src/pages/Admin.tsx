@@ -17,7 +17,11 @@ export default function Admin() {
 
   async function load(adminKey: string) {
     setError('')
-    const res = await fetch('/api/admin/voices', { headers: { 'x-admin-key': adminKey } })
+    // HTTP хедърите поддържат само ISO-8859-1 - кодираме, за да работи паролата
+    // дори с кирилица/специални символи.
+    const res = await fetch('/api/admin/voices', {
+      headers: { 'x-admin-key': encodeURIComponent(adminKey) },
+    })
     if (res.status === 401) {
       setUnlocked(false)
       sessionStorage.removeItem('admin_key')
@@ -42,7 +46,7 @@ export default function Admin() {
   async function act(id: number, action: 'approve' | 'reject' | 'delete') {
     await fetch(`/api/admin/voices/${id}/${action}`, {
       method: 'POST',
-      headers: { 'x-admin-key': key },
+      headers: { 'x-admin-key': encodeURIComponent(key) },
     })
     load(key)
   }

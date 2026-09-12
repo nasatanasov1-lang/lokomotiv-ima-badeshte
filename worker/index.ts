@@ -40,8 +40,15 @@ function json(data: unknown, status = 200): Response {
 }
 
 function isAdmin(request: Request, env: Env): boolean {
-  const key = request.headers.get('x-admin-key')
-  return !!env.ADMIN_PASSWORD && key === env.ADMIN_PASSWORD
+  const raw = request.headers.get('x-admin-key')
+  if (!raw || !env.ADMIN_PASSWORD) return false
+  let key: string
+  try {
+    key = decodeURIComponent(raw)
+  } catch {
+    key = raw
+  }
+  return key === env.ADMIN_PASSWORD
 }
 
 export default {
