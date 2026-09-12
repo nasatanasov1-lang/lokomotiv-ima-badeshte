@@ -146,8 +146,17 @@ export default function Admin() {
         {rest.map((v) => (
           <div
             key={v.id}
-            className="card"
-            style={{ padding: 12, display: 'flex', justifyContent: 'space-between', gap: 12, fontSize: 13 }}
+            style={{
+              padding: 12,
+              display: 'flex',
+              justifyContent: 'space-between',
+              gap: 12,
+              fontSize: 13,
+              borderRadius: 16,
+              border: `1px solid ${v.status === 'approved' ? '#1c3a26' : '#3a1c1c'}`,
+              background: v.status === 'approved' ? '#0c1a10' : '#1a0c0c',
+              color: '#e8e8e6',
+            }}
           >
             <span>
               <strong>{v.status === 'approved' ? '✅' : '❌'}</strong> {v.name}: {v.answer.slice(0, 60)}
