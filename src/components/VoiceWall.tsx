@@ -35,14 +35,14 @@ export default function VoiceWall() {
       <SectionHeading eyebrow="Гласът на Локомотив" title="Какъв Локомотив искаш след 5 години?" description={voicesIntro} />
       <div
         style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+          display: 'flex',
+          flexDirection: 'column',
           gap: 16,
           marginBottom: 32,
         }}
       >
         {displayed.map((v) => (
-          <blockquote key={v.key} className="card" style={{ padding: 20, margin: 0, minWidth: 0 }}>
+          <blockquote key={v.key} className="card" style={{ padding: 20, margin: 0, maxWidth: 680 }}>
             <p style={{ fontSize: 15.5, lineHeight: 1.6, marginBottom: 14, overflowWrap: 'anywhere' }}>
               &ldquo;{v.answer}&rdquo;
             </p>
