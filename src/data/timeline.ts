@@ -33,17 +33,27 @@ export const timeline: TimelineEvent[] = [
     sourceUrl: 'https://www.bta.bg/bg/news/sport/1169188-lokomotiv-plovdiv-predstavi-ofitsialnata-si-ekipirovka-za-noviya-sezon',
   },
   {
-    date: '1945',
-    title: 'Клубът приема името Локомотив',
+    date: '1949',
+    title: 'ЖСК-Левски става Локомотив',
     description:
-      'След обединения между ЖСК и други пловдивски дружества, спортната структура е преименувана на Локомотив - името, под което играе и днес.',
-    needsSource: true,
+      'ЖСК Пловдив (основан на 13 юни 1935 г.), обединен от 1944 г. с Левски като „ЖСК-Левски“, е преименуван на Локомотив. През октомври 1949 г. Славия Пловдив и Локомотив се обединяват, като първо формират ДСО „Енергия“, а после ДСО „Торпедо Пловдив“.',
+    source: 'lokomotivpd.com - „История“',
+    sourceUrl: 'https://lokomotivpd.com/istorija/',
   },
   {
-    date: '1973',
+    date: '1951',
+    title: 'Отборът заиграва като Локомотив Пловдив',
+    description:
+      'От 1951 г. отборът официално играе под името Локомотив Пловдив, запазвайки червено-черно-белите цветове - името и цветовете, познати и днес.',
+    source: 'lokomotivpd.com - „История“',
+    sourceUrl: 'https://lokomotivpd.com/istorija/',
+  },
+  {
+    date: '1972/73',
     title: 'Вицешампион на България',
-    description: 'Локомотив завършва държавното първенство на второ място.',
-    needsSource: true,
+    description: 'Локомотив завършва държавното първенство на второ място - първи вицешампионски медали в историята на клуба.',
+    source: 'lokomotivpd.com - „История“',
+    sourceUrl: 'https://lokomotivpd.com/istorija/',
   },
   {
     date: '1 юни 1983',
@@ -102,10 +112,11 @@ export const timeline: TimelineEvent[] = [
       'https://topsport.bg/bg-football/loko-pd-nadigra-ludogorets-i-zasluzhi-vtora-v-istoriyata-si-superkupa-na-balgariya.html',
   },
   {
-    date: '2020/21',
+    date: '26 май 2021',
     title: 'Вицешампион на България',
-    description: 'Локомотив завършва първенството на второ място.',
-    needsSource: true,
+    description: 'Локомотив завършва сезон 2020/21 на второ място в първенството.',
+    source: 'lokomotivpd.com - „История“',
+    sourceUrl: 'https://lokomotivpd.com/istorija/',
   },
   {
     date: '21 юли 2025',
