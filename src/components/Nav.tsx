@@ -9,8 +9,8 @@ const links = [
   { to: '/100-godini', label: '100 години' },
   { to: '/v-chisla', label: 'Статистика' },
   { to: '/precedenti', label: 'Правили сме го' },
-  { to: '/fenove', label: 'Фенове' },
-  { to: '/media', label: 'Медия' },
+  { to: '/fenove', label: 'Ние' },
+  { to: '/media', label: 'Паметни моменти' },
   { to: '/investitori', label: 'За инвеститори' },
 ]
 
