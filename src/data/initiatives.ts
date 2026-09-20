@@ -1,3 +1,4 @@
+import type { VideoItem } from './media'
 import fans2020 from '../assets/initiatives/fans-2020-food-delivery.webp'
 
 export type Initiative = {
@@ -13,6 +14,7 @@ export type Initiative = {
   summary: string
   /** Останалите абзаци на текста. */
   body: string[]
+  videos?: VideoItem[]
   photo?: {
     src: string
     caption: string
@@ -60,5 +62,13 @@ export const initiatives: Initiative[] = [
       caption: 'Фенове на Локомотив носят храни на хора в нужда',
       credit: 'Стандарт Нюз',
     },
+    videos: [
+      {
+        videoId: '90Vi9GKWzvI',
+        title: 'Видео от Tribuna PlovdivTV',
+        source: 'Tribuna PlovdivTV',
+        sourceUrl: 'https://www.youtube.com/@tribunaplovdivtv',
+      },
+    ],
   },
 ]

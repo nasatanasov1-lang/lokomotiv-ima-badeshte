@@ -1,4 +1,5 @@
 import { Link, Navigate, useParams } from 'react-router-dom'
+import YouTubeEmbed from '../components/YouTubeEmbed'
 import { initiatives } from '../data/initiatives'
 
 export default function InitiativeDetail() {
@@ -41,6 +42,22 @@ export default function InitiativeDetail() {
             {text}
           </p>
         ))}
+
+        {item.videos && item.videos.length > 0 && (
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+              gap: 20,
+              maxWidth: 720,
+              marginTop: 24,
+            }}
+          >
+            {item.videos.map((v) => (
+              <YouTubeEmbed key={v.videoId} video={v} />
+            ))}
+          </div>
+        )}
       </article>
 
       <p
