@@ -20,7 +20,7 @@ export default function Fenove() {
           marginBottom: 20,
         }}
       >
-        Инициативи на феновете
+        От общността
       </h3>
 
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 20 }}>
@@ -39,7 +39,9 @@ export default function Fenove() {
               />
             )}
             <div style={{ padding: 16 }}>
-              <p style={{ fontSize: 12.5, fontWeight: 700, color: 'var(--accent)', marginBottom: 6 }}>{item.date}</p>
+              <p style={{ fontSize: 12.5, fontWeight: 700, color: 'var(--accent)', marginBottom: 6 }}>
+                {item.tag} · {item.date}
+              </p>
               <h4 style={{ fontSize: 18, marginBottom: 8 }}>{item.title}</h4>
               <p style={{ fontSize: 14, lineHeight: 1.55, color: 'var(--ink-secondary)' }}>{item.lead}</p>
             </div>

@@ -12,11 +12,11 @@ export default function InitiativeDetail() {
         to="/fenove"
         style={{ fontSize: 14, fontWeight: 600, color: 'var(--ink-secondary)', textDecoration: 'none' }}
       >
-        ← Всички инициативи
+        ← Всички от общността
       </Link>
 
       <article style={{ marginTop: 24 }}>
-        <p style={{ fontSize: 13, fontWeight: 700, color: 'var(--accent)', marginBottom: 6 }}>{item.date}</p>
+        <p style={{ fontSize: 13, fontWeight: 700, color: 'var(--accent)', marginBottom: 6 }}>{item.tag} · {item.date}</p>
         <h2 style={{ fontSize: 'clamp(24px, 4vw, 34px)', marginBottom: 20, maxWidth: 720 }}>{item.title}</h2>
 
         {item.photo && (
