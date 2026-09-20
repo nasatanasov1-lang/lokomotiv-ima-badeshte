@@ -1,14 +1,13 @@
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 
-/** При смяна на страница връща скрола най-горе (освен при връзка към #котва). */
+/** При всяка смяна на страница връща скрола най-горе. Котвите на същата страница (#...) не я сменят. */
 export default function ScrollToTop() {
-  const { pathname, hash } = useLocation()
+  const { pathname } = useLocation()
 
   useEffect(() => {
-    if (hash) return
     window.scrollTo(0, 0)
-  }, [pathname, hash])
+  }, [pathname])
 
   return null
 }
