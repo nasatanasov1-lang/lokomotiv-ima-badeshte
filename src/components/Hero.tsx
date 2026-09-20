@@ -33,7 +33,7 @@ export default function Hero() {
           style={{
             fontSize: 'clamp(32px, 6vw, 56px)',
             lineHeight: 1.15,
-            marginBottom: 24,
+            marginBottom: 36,
           }}
         >
           Локомотив не е един човек.
@@ -44,17 +44,6 @@ export default function Hero() {
           <br />
           Локомотив остава.
         </h1>
-
-        <p
-          style={{
-            fontSize: 'clamp(17px, 2.2vw, 21px)',
-            color: 'var(--ink-secondary)',
-            maxWidth: 560,
-            margin: '0 auto 36px',
-          }}
-        >
-          Не искаме просто промяна. Искаме перспектива.
-        </p>
 
         <div
           style={{
