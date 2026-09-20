@@ -8,20 +8,9 @@ export default function MediaStorySection({ story }: { story: MediaStory }) {
         <p style={{ fontSize: 13, fontWeight: 700, color: 'var(--accent)', marginBottom: 6 }}>{story.date}</p>
       )}
       <h2 style={{ fontSize: 'clamp(20px, 3vw, 26px)', marginBottom: 12 }}>{story.title}</h2>
-      {[story.summary, ...(story.body ?? [])].map((text, i, all) => (
-        <p
-          key={i}
-          style={{
-            color: 'var(--ink-secondary)',
-            fontSize: 15,
-            lineHeight: 1.65,
-            maxWidth: 720,
-            marginBottom: i === all.length - 1 ? 24 : 14,
-          }}
-        >
-          {text}
-        </p>
-      ))}
+      <p style={{ color: 'var(--ink-secondary)', fontSize: 15, lineHeight: 1.65, maxWidth: 720, marginBottom: 24 }}>
+        {story.summary}
+      </p>
 
       {story.videos.length > 0 && (
         <div
@@ -56,7 +45,7 @@ export default function MediaStorySection({ story }: { story: MediaStory }) {
         </div>
       )}
 
-      {story.videos.length === 0 && story.photos.length === 0 && !story.body && (
+      {story.videos.length === 0 && story.photos.length === 0 && (
         <p className="card" style={{ padding: 20, color: 'var(--ink-muted)', fontSize: 14 }}>
           Все още няма добавени снимки или видеа тук.
         </p>
