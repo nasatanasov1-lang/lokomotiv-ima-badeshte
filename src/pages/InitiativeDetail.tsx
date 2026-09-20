@@ -21,11 +21,11 @@ export default function InitiativeDetail() {
         <h2 style={{ fontSize: 'clamp(24px, 4vw, 34px)', marginBottom: 20, maxWidth: 720 }}>{item.title}</h2>
 
         {item.photo && (
-          <figure className="card" style={{ margin: '0 0 24px', overflow: 'hidden', maxWidth: 720 }}>
+          <figure className="card" style={{ margin: '0 0 24px', overflow: 'hidden', maxWidth: 720, width: 'fit-content' }}>
             <img
               src={item.photo.src}
               alt={item.photo.caption}
-              style={{ width: '100%', display: 'block', aspectRatio: '925 / 520', objectFit: 'cover' }}
+              style={{ display: 'block', maxWidth: '100%', maxHeight: 640, width: 'auto', height: 'auto' }}
             />
             <figcaption style={{ padding: 12, fontSize: 13, color: 'var(--ink-secondary)' }}>
               {item.photo.caption}

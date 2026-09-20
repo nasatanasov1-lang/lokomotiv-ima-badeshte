@@ -35,7 +35,7 @@ export default function Fenove() {
               <img
                 src={item.photo.src}
                 alt={item.photo.caption}
-                style={{ width: '100%', display: 'block', aspectRatio: '16 / 9', objectFit: 'cover' }}
+                style={{ width: '100%', display: 'block', aspectRatio: '16 / 9', objectFit: 'cover', objectPosition: '50% 40%' }}
               />
             )}
             <div style={{ padding: 16 }}>
