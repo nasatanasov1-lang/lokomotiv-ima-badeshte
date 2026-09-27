@@ -31,8 +31,19 @@ function absolute(src: string): string {
   return src.startsWith('http') ? src : `${SITE_URL}${src}`
 }
 
+/**
+ * Картинката за превю (og:image) на видео без собствена снимка. Хостваме си
+ * я сами в public/og/videos/<videoId>.jpg вместо да сочим директно към
+ * i.ytimg.com - Facebook-ботът не успяваше надеждно да зареди снимката от
+ * YouTube (показваше празна картичка при споделяне), а от нашия домейн я
+ * зарежда без проблем.
+ *
+ * ДОБАВЯНЕ НА НОВО ВИДЕО БЕЗ СНИМКА:
+ * свали hqdefault.jpg-то (https://i.ytimg.com/vi/<videoId>/hqdefault.jpg)
+ * и го сложи в public/og/videos/<videoId>.jpg.
+ */
 function youtubeThumb(videoId: string): string {
-  return `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`
+  return absolute(`/og/videos/${videoId}.jpg`)
 }
 
 const STATIC_PAGES: Record<string, SeoEntry> = {

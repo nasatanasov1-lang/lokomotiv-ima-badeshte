@@ -33,7 +33,7 @@ export type Initiative = {
  */
 export const initiatives: Initiative[] = [
   {
-    slug: 'kotov-arena-podcast-2026',
+    slug: 'valentin-kotov-arena-podcast-2026',
     date: '27 септември 2026',
     title: 'Обществени поръчки за 140 млн. лева благодарение на Локомотив',
     tag: 'Подкаст',
