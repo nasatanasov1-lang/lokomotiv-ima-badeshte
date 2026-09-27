@@ -1,3 +1,5 @@
+import { getSeo, SITE_NAME, SITE_URL } from '../src/data/seo'
+
 export interface Env {
   ASSETS: Fetcher
   VOICES_DB: D1Database
@@ -62,13 +64,68 @@ async function isAdmin(request: Request, env: Env): Promise<boolean> {
   return key === expected
 }
 
+function escapeAttr(value: string): string {
+  return value.replace(/&/g, '&amp;').replace(/"/g, '&quot;')
+}
+
+/**
+ * Вгражда заглавие/описание/картинка за конкретния адрес в HTML-а, преди да
+ * го върнем. Нужно е, защото сайтът е React приложение - без това Facebook,
+ * Viber, Messenger и др. виждат само празния индекс файл и показват
+ * превю без картинка и текст, независимо коя страница се споделя.
+ */
+function injectSeo(response: Response, pathname: string): Response {
+  const seo = getSeo(pathname)
+  const canonical = `${SITE_URL}${pathname}`
+  const title = escapeAttr(seo.title)
+  const description = escapeAttr(seo.description)
+  const image = escapeAttr(seo.image)
+  const url = escapeAttr(canonical)
+
+  return new HTMLRewriter()
+    .on('title', {
+      element(el) {
+        el.setInnerContent(seo.title)
+      },
+    })
+    .on('meta[name="description"]', {
+      element(el) {
+        el.setAttribute('content', seo.description)
+      },
+    })
+    .on('head', {
+      element(el) {
+        el.append(
+          `<meta property="og:type" content="${seo.type ?? 'website'}">
+    <meta property="og:site_name" content="${escapeAttr(SITE_NAME)}">
+    <meta property="og:url" content="${url}">
+    <meta property="og:title" content="${title}">
+    <meta property="og:description" content="${description}">
+    <meta property="og:image" content="${image}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="${title}">
+    <meta name="twitter:description" content="${description}">
+    <meta name="twitter:image" content="${image}">
+    <link rel="canonical" href="${url}">`,
+          { html: true },
+        )
+      },
+    })
+    .transform(response)
+}
+
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
     const url = new URL(request.url)
     const { pathname } = url
 
     if (!pathname.startsWith('/api/')) {
-      return env.ASSETS.fetch(request)
+      const assetResponse = await env.ASSETS.fetch(request)
+      const contentType = assetResponse.headers.get('content-type') ?? ''
+      if (contentType.includes('text/html')) {
+        return injectSeo(assetResponse, pathname)
+      }
+      return assetResponse
     }
 
     try {

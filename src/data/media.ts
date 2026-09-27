@@ -36,9 +36,9 @@ export type MediaStory = {
  * { videoId: 'dQw4w9WgXcQ', title: 'Заглавие', source: '...', sourceUrl: '...' }
  *
  * ДОБАВЯНЕ НА СНИМКА:
- * 1. Сложи файла в src/assets/media/
- * 2. import photo1 from '../assets/media/photo1.jpg' най-горе в този файл
- * 3. { src: photo1, caption: '...', credit: '...' }
+ * сложи файла в public/og/ (НЕ в src/assets/ - този файл трябва да остане
+ * без import на картинки, защото го чете и Cloudflare Worker-ът за
+ * превюто при споделяне) и посочи { src: '/og/файл.jpg', caption: '...' }.
  *
  * ВАЖНО: снимки от чужди сайтове/медии не се копират тук без разрешение -
  * или лично заснети от фенове (с тяхно съгласие), или официално споделени

@@ -1,6 +1,4 @@
 import type { VideoItem } from './media'
-import fans2020 from '../assets/initiatives/fans-2020-food-delivery.webp'
-import protest2026 from '../assets/initiatives/protest-cska-2026-entrance.png'
 
 export type Initiative = {
   slug: string
@@ -26,8 +24,12 @@ export type Initiative = {
 /**
  * ДОБАВЯНЕ НА НОВА ИНИЦИАТИВА:
  * копирай обект по образец, дай уникален slug и го сложи НАЙ-ГОРЕ в масива
- * (най-новите са първи). Снимките се слагат в src/assets/initiatives/ и се
- * импортват най-горе в този файл.
+ * (най-новите са първи).
+ *
+ * ДОБАВЯНЕ НА СНИМКА:
+ * сложи файла в public/og/ (НЕ в src/assets/ - този файл трябва да остане
+ * без import на картинки, защото го чете и Cloudflare Worker-ът за
+ * превюто при споделяне) и посочи { src: '/og/файл.jpg', caption: '...' }.
  */
 export const initiatives: Initiative[] = [
   {
@@ -65,7 +67,7 @@ export const initiatives: Initiative[] = [
       'Протестът идва след загубата с 2:0 от Ботев в предишния кръг, в градското дерби. Преди мача с ЦСКА Локомотив е на 11-о място с 6 точки, а ЦСКА е сред водачите с 20 точки от осем мача. Мачът започна в 17:45.',
     ],
     photo: {
-      src: protest2026,
+      src: '/og/protest-cska-2026-entrance.png',
       caption: 'Плакат „Крушарски вън“ на входа на спортен комплекс „Локомотив“',
     },
     videos: [
@@ -92,7 +94,7 @@ export const initiatives: Initiative[] = [
       'След репортаж по БНТ за инициативата от Димитровград се свързват с феновете, за да обменят опит в грижата за възрастни хора. Набирането на доброволци продължава и всеки може да се включи - телефоните за контакт и поръчки са публикувани в официалните профили на фенклуба в социалните мрежи.',
     ],
     photo: {
-      src: fans2020,
+      src: '/og/fans-2020-food-delivery.webp',
       caption: 'Фенове на Локомотив носят храни на хора в нужда',
       credit: 'Стандарт Нюз',
     },
