@@ -119,5 +119,8 @@ const REGISTRY: Record<string, SeoEntry> = {
 }
 
 export function getSeo(pathname: string): SeoEntry {
-  return REGISTRY[pathname] ?? DEFAULT_SEO
+  // "/fenove/slug" и "/fenove/slug/" трябва да сочат към едно и също нещо -
+  // Facebook/др. ботове понякога добавят крайна наклонена черта.
+  const normalized = pathname.length > 1 && pathname.endsWith('/') ? pathname.slice(0, -1) : pathname
+  return REGISTRY[normalized] ?? DEFAULT_SEO
 }
