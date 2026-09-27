@@ -24,29 +24,44 @@ export default function Fenove() {
       </h3>
 
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 20 }}>
-        {initiatives.map((item) => (
-          <Link
-            key={item.slug}
-            to={`/fenove/${item.slug}`}
-            className="card"
-            style={{ display: 'block', overflow: 'hidden', textDecoration: 'none', color: 'inherit' }}
-          >
-            {item.photo && (
-              <img
-                src={item.photo.src}
-                alt={item.photo.caption}
-                style={{ width: '100%', display: 'block', aspectRatio: '16 / 9', objectFit: 'cover', objectPosition: '50% 40%' }}
-              />
-            )}
-            <div style={{ padding: 16 }}>
-              <p style={{ fontSize: 12.5, fontWeight: 700, color: 'var(--accent)', marginBottom: 6 }}>
-                {item.tag} · {item.date}
-              </p>
-              <h4 style={{ fontSize: 18, marginBottom: 8 }}>{item.title}</h4>
-              <p style={{ fontSize: 14, lineHeight: 1.55, color: 'var(--ink-secondary)' }}>{item.lead}</p>
-            </div>
-          </Link>
-        ))}
+        {initiatives.map((item) => {
+          // Ако няма собствена снимка, ползваме official YouTube миниатюра на първото видео, за да не стои картата без картинка.
+          const cardImage = item.photo
+            ? { src: item.photo.src, alt: item.photo.caption }
+            : item.videos?.[0]
+              ? { src: `https://i3.ytimg.com/vi/${item.videos[0].videoId}/hqdefault.jpg`, alt: item.videos[0].title }
+              : null
+
+          return (
+            <Link
+              key={item.slug}
+              to={`/fenove/${item.slug}`}
+              className="card"
+              style={{ display: 'block', overflow: 'hidden', textDecoration: 'none', color: 'inherit' }}
+            >
+              {cardImage && (
+                <img
+                  src={cardImage.src}
+                  alt={cardImage.alt}
+                  style={{
+                    width: '100%',
+                    display: 'block',
+                    aspectRatio: '16 / 9',
+                    objectFit: 'cover',
+                    objectPosition: '50% 40%',
+                  }}
+                />
+              )}
+              <div style={{ padding: 16 }}>
+                <p style={{ fontSize: 12.5, fontWeight: 700, color: 'var(--accent)', marginBottom: 6 }}>
+                  {item.tag} · {item.date}
+                </p>
+                <h4 style={{ fontSize: 18, marginBottom: 8 }}>{item.title}</h4>
+                <p style={{ fontSize: 14, lineHeight: 1.55, color: 'var(--ink-secondary)' }}>{item.lead}</p>
+              </div>
+            </Link>
+          )
+        })}
       </div>
     </div>
   )
